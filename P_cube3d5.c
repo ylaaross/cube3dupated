@@ -6,17 +6,15 @@
 /*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:05:10 by ylaaross          #+#    #+#             */
-/*   Updated: 2023/12/20 00:37:42 by ylaaross         ###   ########.fr       */
+/*   Updated: 2023/12/20 22:07:57 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "P_CUBE3D.h"
 
-void	init_vars(t_file **f, mlx_t **mlx, mlx_image_t **img, t_all_infos *all)
+void	init_vars(t_file **f, t_all_infos *all)
 {
 	*f = 0;
-	*mlx = 0;
-	*img = 0;
 	all->element_part = 0;
 	all->map = 0;
 	all->map_only = 0;
@@ -52,6 +50,5 @@ void	convert_check(t_file *f, t_all_infos *all)
 {
 	all->map = convertto_arr(f);
 	mallocate_find(all);
+	test_cases(all);
 }
-
-

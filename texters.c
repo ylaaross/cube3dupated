@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texters.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 20:41:16 by asaber            #+#    #+#             */
-/*   Updated: 2023/12/19 20:45:19 by asaber           ###   ########.fr       */
+/*   Updated: 2023/12/20 22:46:50 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ uint32_t	get_color(mlx_texture_t	*texture, int pix)
 	return (color);
 }
 
-void	get_texture(t_info *g_info)
+void	assigne_texture(t_info *g_info)
 {
 	if (g_info->vdist == g_info->f_dist)
 	{
@@ -46,12 +46,17 @@ void	get_texture(t_info *g_info)
 	}
 }
 
-void	ray_view(double angle, t_info *g_info)
+void	init_derection(t_info *g_info)
 {
 	g_info->up = 0;
 	g_info->down = 0;
 	g_info->left = 0;
 	g_info->right = 0;
+}
+
+void	direction(double angle, t_info *g_info)
+{
+	init_derection(g_info);
 	if (angle > 0 && angle < M_PI)
 		g_info->down = 1;
 	else
@@ -60,5 +65,5 @@ void	ray_view(double angle, t_info *g_info)
 		g_info->right = 1;
 	else
 		g_info->left = 1;
-	get_texture(g_info);
+	assigne_texture(g_info);
 }

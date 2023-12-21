@@ -6,7 +6,7 @@
 /*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 20:17:57 by ylaaross          #+#    #+#             */
-/*   Updated: 2023/12/19 22:46:02 by ylaaross         ###   ########.fr       */
+/*   Updated: 2023/12/20 22:58:22 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ typedef struct all_infos
 void					convert_check(t_file *f, t_all_infos *all);
 void					test_cases(t_all_infos *all);
 void					mallocate_find(t_all_infos *all);
-void					init_vars(t_file **f, mlx_t **mlx, mlx_image_t **img,
-							t_all_infos *all);
+void					init_vars(t_file **f, t_all_infos *all);
 void					print_err(void);
 void					t_tabcheck(t_file *f);
 int						find_playerp(char **map);
@@ -141,18 +140,8 @@ int						ft_strcmp(const char *s1, const char *s2);
 void					file_read(t_file **f, int fd);
 char					**ft_splitp(char const *s, char c);
 int						wall_check(char **map);
-int						test_void(char **map);
-int						width_teol(char *line, int *i);
-int						max_width(char *line);
-char					**split_2(char *line);
-int						number_line(char *line);
-int						check_new_line(char **p, int s);
-int						check_pline(char *p);
-int						check_aline(char *p);
-char					**ft_split(char const *s, char c);
 int						file_d(char *path);
 int						empty_line(char *line);
 char					*ft_strstr(const char *haystack, const char *needle);
-int						map_line(char *line);
 
 #endif

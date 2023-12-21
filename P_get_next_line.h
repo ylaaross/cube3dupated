@@ -6,12 +6,12 @@
 /*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:55:37 by ylaaross          #+#    #+#             */
-/*   Updated: 2023/12/20 17:08:33 by ylaaross         ###   ########.fr       */
+/*   Updated: 2023/12/20 22:19:36 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef P_GET_NEXT_LINE_H
+# define P_GET_NEXT_LINE_H
 # ifndef BUFFER_SIZEG
 #  define BUFFER_SIZEG 10
 # endif

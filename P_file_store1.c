@@ -6,7 +6,7 @@
 /*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:27:52 by ylaaross          #+#    #+#             */
-/*   Updated: 2023/12/19 19:38:40 by ylaaross         ###   ########.fr       */
+/*   Updated: 2023/12/20 21:40:56 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,5 @@ void	file_read(t_file **f, int fd)
 		i++;
 	}
 	close(fd);
+	t_tabcheck(*f);
 }

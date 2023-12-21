@@ -6,7 +6,7 @@
 /*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:22:20 by ylaaross          #+#    #+#             */
-/*   Updated: 2023/12/19 22:18:49 by ylaaross         ###   ########.fr       */
+/*   Updated: 2023/12/20 19:33:23 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void	t_tabcheck(t_file *f)
 		{
 			if (f->line[i] == 9 || f->line[i] == 11)
 			{
-				printf("*");
 				write(2, "Error\n", 6);
 				exit(1);
 			}

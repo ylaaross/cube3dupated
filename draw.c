@@ -6,7 +6,7 @@
 /*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:34:46 by asaber            #+#    #+#             */
-/*   Updated: 2023/12/20 17:06:20 by ylaaross         ###   ########.fr       */
+/*   Updated: 2023/12/20 22:12:05 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,21 @@ void	squar_draw(float x, float y, int color, t_info *g_info)
 		i++;
 	}
 }
-	
-t_range * find_s_rgb(t_range	*range, char c)
-{
-	
 
+t_range	*find_s_rgb(t_range *range, char c)
+{
 	if (range->identifiant == c)
 		return (range);
 	else
 		return (range->next);
 }
-void	draw_floor_and_ceiling(t_info *g_info, double s_p, 
-double e_p, double id)
+
+void	draw_floor_and_ceiling(t_info *g_info, double s_p, double e_p,
+		double id)
 {
-	t_range *c;
-	t_range *f;
-	
+	t_range	*c;
+	t_range	*f;
+
 	c = NULL;
 	f = NULL;
 	c = find_s_rgb(g_info->rgb, 'C');
@@ -67,10 +66,10 @@ void	draw_walls(double stripId, t_info *g_info)
 	double	end_point;
 
 	g_info->distprojectplane = (g_info->wight / 2) / tan(g_info->fov_angle / 2);
-	g_info->f_dist = g_info->f_dist * 
-		cos(g_info->ray_angle - g_info->player.rotation_angle);
-	g_info->wallstriphight = 
-		SQUIR_SIZE / g_info->f_dist * g_info->distprojectplane;
+	g_info->f_dist = g_info->f_dist * cos(g_info->ray_angle
+			- g_info->player.rotation_angle);
+	g_info->wallstriphight = SQUIR_SIZE / g_info->f_dist
+		* g_info->distprojectplane;
 	start_point = (g_info->hight / 2) - (g_info->wallstriphight / 2);
 	end_point = (g_info->hight / 2) + (g_info->wallstriphight / 2);
 	g_info->start_point = (int)start_point;
@@ -97,10 +96,10 @@ void	draw_map(void *param)
 		while (g_info->map[i][j])
 		{
 			if (g_info->map[i][j] == '1')
-				squar_draw(g_info->minimap * (j * SQUIR_SIZE), g_info->minimap 
+				squar_draw(g_info->minimap * (j * SQUIR_SIZE), g_info->minimap
 					* (i * SQUIR_SIZE), ft_pixel(255, 255, 255, 255), g_info);
-			else if (g_info->map[i][j] == '0' || g_info->map[i][j] == 'N' 
-				|| g_info->map[i][j] == 'S' || g_info->map[i][j] == 'W' 
+			else if (g_info->map[i][j] == '0' || g_info->map[i][j] == 'N'
+				|| g_info->map[i][j] == 'S' || g_info->map[i][j] == 'W'
 				|| g_info->map[i][j] == 'E')
 				squar_draw(g_info->minimap * (j * SQUIR_SIZE), g_info->minimap
 					* (i * SQUIR_SIZE), ft_pixel(0, 0, 0, 255), g_info);

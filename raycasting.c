@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 21:05:51 by asaber            #+#    #+#             */
-/*   Updated: 2023/12/19 20:46:49 by asaber           ###   ########.fr       */
+/*   Updated: 2023/12/20 22:47:39 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	main_cast(t_info *g_info)
 	cast_horizontal(raycast, g_info);
 	cast_vertical(raycast, g_info);
 	check_distence(raycast, g_info);
+	free(raycast);
 }
 
 double	normalize_angle(double angle)
@@ -100,7 +101,7 @@ void	cast_all_ray(t_info *g_info)
 		g_info->player.rotation_angle = 
 			normalize_angle(g_info->player.rotation_angle);
 		g_info->ray_angle = normalize_angle(g_info->ray_angle);
-		ray_view(g_info->ray_angle, g_info);
+		direction(g_info->ray_angle, g_info);
 		draw_walls(i++, g_info);
 	}
 }

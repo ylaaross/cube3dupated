@@ -6,7 +6,7 @@
 /*   By: ylaaross <ylaaross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:20:02 by asaber            #+#    #+#             */
-/*   Updated: 2023/12/19 23:37:00 by ylaaross         ###   ########.fr       */
+/*   Updated: 2023/12/20 22:59:41 by ylaaross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@
 # include <math.h>
 # include <fcntl.h>
 # include "/Users/ylaaross/MLX42/include/MLX42/MLX42.h"
-
+# include "P_CUBE3D.h"
 # define SQUIR_SIZE 64
 # define BUFFER_SIZE 500000
-#include "P_CUBE3D.h"
 
 typedef struct playerinfo
 {
@@ -101,6 +100,10 @@ typedef struct gameinfo
 
 }	t_info;
 
+void		free_pars(t_file *f, t_all_infos *all);
+void		ft_free(t_info *g_info);
+int			get_maxlen(char **map);
+int			map_len_colom(char **map);
 char		**ft_split(char const *s, char c);
 int			ft_strlen(char *str);
 int32_t		ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
@@ -122,7 +125,6 @@ int			checkadd_horisontal(t_info *g_info, t_raycasting *raycast);
 int			checkadd_vertical(t_info *g_info, t_raycasting *raycast);
 void		updateraydirection(t_info *g_info);
 uint32_t	get_color(mlx_texture_t	*texture, int pix);
-void		get_texture(t_info *g_info);
-void		ray_view(double angle, t_info *g_info);
+void		direction(double angle, t_info *g_info);
 void		check_distence(t_raycasting *raycast, t_info *g_info);
 #endif
